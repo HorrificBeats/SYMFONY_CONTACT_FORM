@@ -9,10 +9,8 @@
 
 
 ## Features:
-### Send email
-### Attach a file
-
-### Security:
-  - Register new account
-  - Log in / Log out
+- Send email
+- Attach a file
+- Register new account
+- Log in / Log out
 
