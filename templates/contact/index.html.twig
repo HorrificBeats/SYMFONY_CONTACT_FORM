@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Send us an email!
+{% endblock %}
+
+{% block body %}
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success">
+			{{ message }}
+		</div>
+	{% endfor %}
+	<h1 class='text-center mb-5 text-white'>Contact Us</h1>
+
+	<div
+		id='contactForm' class="container p-3 rounded col-4 mx-auto">
+		{# {{ form(contactForm) }} #}
+
+		{{form_start(contactForm)}}
+
+		<div class="row gx-2">
+			<div class="col-6">{{form_row(contactForm.firstName)}}</div>
+			<div class="col-6">{{form_row(contactForm.lastName)}}</div>
+		</div>
+
+		{{form_row(contactForm.email)}}
+		{{form_row(contactForm.message)}}
+		<hr>
+		{{form_row(contactForm.attachment)}}
+
+		<button type='submit' class='btn w-100 text-light'>Send Email</button>
+		{{form_end(contactForm)}}
+	</div>
+	<style>
+		button {
+			background-color: #6496F8 !important;
+            border-radius: 25px !important;
+            
+		}
+		button:hover {
+			background-color: #4B7BD7 !important;
+		}
+		label {
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		textarea {
+			height: 150px;
+            border-radius: 10px !important;
+		}
+        input {
+            border-radius: 10px !important;
+            background: #FFFFFF !important;
+        }
+
+		#contactForm {
+			background: rgba(255, 255, 255, 0.25);
+			backdrop-filter: blur(4px);
+			-webkit-backdrop-filter: blur(4px);
+			border-radius: 10px !important;
+		}
+	</style>
+{% endblock %}
